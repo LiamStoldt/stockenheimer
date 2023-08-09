@@ -24,7 +24,7 @@ def stock_page(ticker: str):
 
     # perform stock test
     # need to escape the input string :)
-    happy = (asx_price_getter(ticker) > 0)
+    happy = (get_stock_daily_change(ticker) > 0)
 
 
     image_path = ""
