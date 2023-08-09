@@ -1,7 +1,6 @@
 """Main flask file for stockenheimer project"""
 
 from flask import Flask
-import requests
 
 
 app = Flask(__name__)
