@@ -8,7 +8,7 @@ import os
 app = Flask(__name__)
 
 
-img = os.path.join('static', 'Image')
+img = os.path.join('static', 'images')
 
 
 @app.route("/")
