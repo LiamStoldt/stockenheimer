@@ -1,6 +1,6 @@
 """Main flask file for stockenheimer project"""
 
-from flask import Flask
+from flask import Flask, render_template
 from asx_price_getter import get_stock_daily_change
 import os
 
@@ -36,5 +36,5 @@ def stock_page(ticker: str):
     file = os.path.join(img, image_path)
 
     
-    return f'<img src="{image_path}" alt="oppenheimer">'
+    return render_template('stockenheimer.html', image=file)
 
