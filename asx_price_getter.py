@@ -1,6 +1,6 @@
 """Module for getting stock prices"""
 
-import requests
+import yfinance as yf
 
 
 def get_stock_daily_change(ticker: str) -> float | None:
@@ -10,6 +10,13 @@ def get_stock_daily_change(ticker: str) -> float | None:
     return a None instead.
     """
 
-    pass
-
+    # get data
+    try:
+        ticker = yf.Ticker(ticker)
+        open = ticker.info['open']
+        current = ticker.info['ask']
+    except:
+        return None
+    
+    return current - open    
 
